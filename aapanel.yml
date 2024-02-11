@@ -12,3 +12,4 @@ services:
       - ~/website_data:/www/wwwroot
       - ~/mysql_data:/www/server/data
       - ~/vhost:/www/server/panel/vhost
+      - /var/run/docker.sock:/var/run/docker.sock
