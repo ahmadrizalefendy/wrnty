@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  synolog:
+    image: ubuntu:20.04
+    container_name: synolog
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro  
+      # Bind volume untuk membuat disk container sesuai dengan direktori yang diberikan
+      - /volume1/@appdata/ContainerManager/all_shares/docker/.zz:/root
+    tty: true
+    stdin_open: true
